@@ -1,6 +1,13 @@
+@font-face {
+  font-family: "Ar Font";
+  src: url("../fonts/ar-font.woff");
+}
+
 html,
 body {
   min-height: 100%;
   background-color: black;
   color: brown;
+  font-family: "Ar Font";
+  letter-spacing: 0.3rem;
 }
