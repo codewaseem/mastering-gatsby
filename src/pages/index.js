@@ -49,6 +49,9 @@ const IndexPage = () => (
         Emotion sample
       </Link>
       <Link to="/runtime-data">Runtime Live Data</Link>
+      <hr />
+
+      <Link to="/images">Images</Link>
     </section>
     <Container className={style.feature}>
       <h1>About Styled Components</h1>
