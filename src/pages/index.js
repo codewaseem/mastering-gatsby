@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link as UnstyledLink } from "gatsby"
 import Layout from "../components/layout"
 import styled from "@emotion/styled"
 import style from "./index.module.css"
@@ -35,6 +35,10 @@ const User = props => (
   </>
 )
 
+const Link = styled(UnstyledLink)`
+  color: white;
+`
+
 const IndexPage = () => (
   <Layout>
     <section style={{ display: "grid" }}>
@@ -44,6 +48,7 @@ const IndexPage = () => (
       <Link to="/emotion-sample" style={{ fontSize: "x-large" }}>
         Emotion sample
       </Link>
+      <Link to="/runtime-data">Runtime Live Data</Link>
     </section>
     <Container className={style.feature}>
       <h1>About Styled Components</h1>
