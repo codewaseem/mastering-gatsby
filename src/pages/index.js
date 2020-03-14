@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
+import style from "./index.module.css"
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -35,7 +36,7 @@ const IndexPage = () => (
       <Link to="/auto">Another page auto generated</Link>
       <Link to="/section/about">Nested page link</Link>
     </section>
-    <Container>
+    <Container className={style.feature}>
       <h1>About Styled Components</h1>
       <p>Styled Components is cool</p>
       <User
