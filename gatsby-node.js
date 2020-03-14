@@ -46,6 +46,34 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     },
   })
+
+  // create mdx pages
+
+  const allMdx = await graphql(`
+    {
+      allMdx {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (allMdx.errors) {
+    reporter.panicOnBuild(`Error while running MDX GraphQL query.`)
+    return
+  }
+
+  allMdx.data.allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: path.resolve(`src/templates/post.js`),
+    })
+  })
 }
 
 const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
