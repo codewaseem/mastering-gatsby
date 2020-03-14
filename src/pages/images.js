@@ -19,16 +19,27 @@ export default ({ data }) => {
         Large Image optimized by image-transformer plugins used in gatsby-image
         component
       </h1>
-      <Img fluid={data.file.childImageSharp.fluid} />
+      <Img fluid={data.colorImage.childImageSharp.fluid} />
+
+      <h1>Image transformed by plugin</h1>
+      <Img fluid={data.grayscaleImage.childImageSharp.fluid} />
     </section>
   )
 }
 
 export const query = graphql`
-  query {
-    file(relativePath: { eq: "unoptimized.png" }) {
+  {
+    colorImage: file(relativePath: { eq: "unoptimized.png" }) {
       childImageSharp {
         fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    grayscaleImage: file(relativePath: { eq: "unoptimized.png" }) {
+      childImageSharp {
+        fluid(grayscale: true) {
           ...GatsbyImageSharpFluid
         }
       }
