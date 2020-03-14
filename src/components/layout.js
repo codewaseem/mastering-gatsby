@@ -13,11 +13,10 @@ import "./layout.css"
 const Layout = ({ children }) => {
   return (
     <div
+      className="app-layout"
       style={{
         margin: `0 auto`,
         maxWidth: 650,
-        padding: `0 1rem`,
-        backgroundColor: "teal",
       }}
     >
       {children}
