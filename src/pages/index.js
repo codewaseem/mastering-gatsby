@@ -3,6 +3,12 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import styled from "@emotion/styled"
 import style from "./index.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faReact,
+  faNodeJs,
+  faFreeCodeCamp,
+} from "@fortawesome/free-brands-svg-icons"
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -50,6 +56,11 @@ const IndexPage = () => (
         username="Waseem Ahmed"
         avatar="https://media-exp1.licdn.com/dms/image/C5103AQHgq6PMyzXXKA/profile-displayphoto-shrink_200_200/0?e=1589414400&v=beta&t=A9bU-Ta2ZzyHggbuP6NNkUIBRNiJqAA7C8cNgMt3Y1E"
       />
+      <div>
+        <FontAwesomeIcon size="5x" icon={faReact} />
+        <FontAwesomeIcon size="5x" icon={faNodeJs} />
+        <FontAwesomeIcon size="5x" icon={faFreeCodeCamp} />
+      </div>
     </Container>
   </Layout>
 )
